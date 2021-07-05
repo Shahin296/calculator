@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <section id="home">
+        <div class="container">
+              <input id="calculationSceen" type="text" value="">
+              <div class="button-container">
+                <button onclick="buttonNumberHandler(7)" >7</button>
+                <button onclick="buttonNumberHandler(8)" >8</button>
+                <button onclick="buttonNumberHandler(9)">9</button>
+                <button onclick="signHandler('/')">/</button>
+                <button onclick="buttonNumberHandler(6)">6</button>
+                <button onclick="buttonNumberHandler(5)">5</button>
+                <button onclick="buttonNumberHandler(4)">4</button>
+                <button onclick="signHandler('*')">x</button>
+                <button onclick="buttonNumberHandler(3)">3</button>
+                <button onclick="buttonNumberHandler(2)">2</button>
+                <button onclick="buttonNumberHandler(1)">1</button>
+                <button onclick="signHandler('-')">-</button>
+                <button id="btn-C">C</button>
+                <button onclick="buttonNumberHandler(0)">0</button>
+                <button id="btn-calculate">=</button>
+                <button  onclick="signHandler('+')">+</button>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <script>
+ 
+
+
+document.getElementById("btn-calculate").addEventListener("click", function(){
+    const calculationSceen = document.getElementById("calculationSceen");
+    calculationSceen.value = eval(calculationSceen.value);
+
+})
+
+
+document.getElementById("btn-C").addEventListener("click", function(){
+ 
+    document.getElementById("calculationSceen").value = "";
+
+})
+
+
+function signHandler(sign) {
+    const calculationSceen = document.getElementById("calculationSceen");
+    calculationSceen.value += sign ;
+
+} 
+
+
+ function buttonNumberHandler(num) {
+    const calculationInput = document.getElementById("calculationSceen");
+    const calculationSceen = calculationInput.value;
+    calculationInput.value += num;
+ }
+
+    </script>
+</body>
+
+</html>
